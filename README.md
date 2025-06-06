@@ -46,3 +46,7 @@ To run this project locally, follow these steps:
       http://localhost:8080
     ```
 
+    ⚠️ Note about PHP version
+
+     This project was built using **PHP 8.4.3**
+
