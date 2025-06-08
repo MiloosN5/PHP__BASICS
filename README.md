@@ -50,3 +50,7 @@ To run this project locally, follow these steps:
 
      This project was built using **PHP 8.4.3**
 
+    ⚠️ Note about running in CLI vs BROWSER
+
+     This code is written to run in a browser. If you want to test it in the command-line interface (CLI), replace all instances of ```"<br/>"``` with ```PHP_EOL```.
+
