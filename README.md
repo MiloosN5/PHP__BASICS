@@ -5,7 +5,7 @@ Demonstration of various examples related to different topics/areas in PHP.
 ## Lessons
 
 Choose an appropriate branch name that corresponds to the lesson title:
-   1. TBD
+   1. Data Types
 
 ## Working locally
 
