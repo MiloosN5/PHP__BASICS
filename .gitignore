@@ -19,3 +19,7 @@ Thumbs.db
 # Cache 
 cache/
 tmp/
+
+# Additional (Temp)
+temp.txt
+tempNotes.txt
