@@ -72,8 +72,8 @@ $string_expand = 'expandText';
 echo "This will expand: \n a newline", PHP_EOL;
 /*
     [CLI]
-        This will expand: 
-        a newline
+    -->|This will expand: 
+    -->| a newline
     [BROWSER] This will expand: a newline
 */
 echo "Variables do $string_expand both",  PHP_EOL;
@@ -92,9 +92,9 @@ echo <<<END
 END;
 /*
     [CLI]
-              a
-             b
-            c    
+    -->|      a
+    -->|     b
+    -->|    c    
     [BROWSER] a b c
 */
 
@@ -108,9 +108,9 @@ echo <<<END
     END;
 /*
     [CLI]
-          a
-         b
-        c      
+    -->|  a
+    -->| b
+    -->|c      
     [BROWSER] a b c
 */
 
@@ -135,9 +135,9 @@ EOD;
 echo PHP_EOL;
 /*
     [CLI]
-        Example of string spanning multiple lines
-        using nowdoc syntax. Backslashes are always treated literally,
-        e.g. \\ and \'.
+    -->|Example of string spanning multiple lines
+    -->|using nowdoc syntax. Backslashes are always treated literally,
+    -->|e.g. \\ and \'.
     [BROWSER] Example of string spanning multiple lines using nowdoc syntax. Backslashes are always treated literally, e.g. \\ and \'.
 */
 
