@@ -7,14 +7,14 @@
 ## bool
 
 $bool1 = true;
-echo $bool1 . PHP_EOL; // 1
+echo $bool1 . "<br/>"; // 1
 var_dump($bool1); // bool(true)
-echo PHP_EOL . get_debug_type($bool1); // bool
+echo "<br/>" . get_debug_type($bool1); // bool
 
 $bool1 = false; // reassigning a new value
-echo $bool1 . PHP_EOL; // empty output
+echo $bool1 . "<br/>"; // empty output
 var_dump($bool1); // bool(false)
-echo PHP_EOL;
+echo "<br/>";
 
 ## int
 
@@ -26,17 +26,17 @@ $int5 = 0b11111111; // binary number (equivalent to 255 decimal)
 $int6 = 1_234_567; // decimal number (as of PHP 7.4.0)
 
 var_dump($int1); // int(1039)
-echo PHP_EOL;
+echo "<br/>";
 var_dump($int2); // int(9)
-echo PHP_EOL;
+echo "<br/>";
 var_dump($int3); // int(9)
-echo PHP_EOL;
+echo "<br/>";
 var_dump($int4); // int(26)
-echo PHP_EOL;
+echo "<br/>";
 var_dump($int5); // int(255)
-echo PHP_EOL;
+echo "<br/>";
 var_dump($int6); // int(1234567)
-echo PHP_EOL;
+echo "<br/>";
 
 ## float
 
@@ -46,37 +46,37 @@ $float3 = 7E-10; // // EXPONENT_DNUM
 $float4 = 1_234.567; // as of PHP 7.4.0
 
 if (is_int(($float1))) {
-    echo PHP_EOL . "1.234 is integer" . PHP_EOL;
+    echo "<br/>" . "1.234 is integer" . "<br/>";
 } else {
-    echo PHP_EOL . "1.234 is not integer" . PHP_EOL; // ✔
+    echo "<br/>" . "1.234 is not integer" . "<br/>"; // ✔
 }
 
 var_dump($float1); // float(1.234)
-echo PHP_EOL;
+echo "<br/>";
 var_dump($float2); // float(1200)
-echo PHP_EOL;
+echo "<br/>";
 var_dump($float3); // float(7.0E-10)
-echo PHP_EOL;
+echo "<br/>";
 var_dump($float4); // float(1234.567)
-echo PHP_EOL;
+echo "<br/>";
 
 ## string
 
 ### single quoted
-echo 'this is a simple string' . PHP_EOL; // this is a simple string
-echo 'This will not expand: \n a newline', PHP_EOL; // This will not expand: \n a newline
-echo 'Variables do not $expand $either', PHP_EOL; // Variables do not $expand $either
+echo 'this is a simple string' . "<br/>"; // this is a simple string
+echo 'This will not expand: \n a newline', "<br/>"; // This will not expand: \n a newline
+echo 'Variables do not $expand $either', "<br/>"; // Variables do not $expand $either
 
 ### double quoted
 $string_expand = 'expandText';
-echo "This will expand: \n a newline", PHP_EOL;
+echo "This will expand: \n a newline", "<br/>";
 /*
     [CLI]
     -->|This will expand: 
     -->| a newline
     [BROWSER] This will expand: a newline
 */
-echo "Variables do $string_expand both",  PHP_EOL;
+echo "Variables do $string_expand both",  "<br/>";
 /*
     [CLI] Variables do expandText both
     [BROWSER] Variables do expandText both
@@ -98,7 +98,7 @@ END;
     [BROWSER] a b c
 */
 
-echo  PHP_EOL;
+echo  "<br/>";
 
 // 4 spaces of indentation
 echo <<<END
@@ -114,7 +114,7 @@ echo <<<END
     [BROWSER] a b c
 */
 
-echo PHP_EOL;
+echo "<br/>";
 
 /* ERROR
     echo <<<END
@@ -132,7 +132,7 @@ Example of string spanning multiple lines
 using nowdoc syntax. Backslashes are always treated literally,
 e.g. \\ and \'.
 EOD;
-echo PHP_EOL;
+echo "<br/>";
 /*
     [CLI]
     -->|Example of string spanning multiple lines
@@ -148,7 +148,7 @@ $array1 = array(
     "color" => "green",
 );
 var_dump($array1); // array(2) { ["food"]=> string(5) "apple" ["color"]=> string(5) "green" }
-echo PHP_EOL;
+echo "<br/>";
 
 ## Using the short array syntax
 $array2 = [
@@ -156,7 +156,7 @@ $array2 = [
     "color" => "green",
 ];
 var_dump($array2); // array(2) { ["food"]=> string(5) "apple" ["color"]=> string(5) "green" }
-echo PHP_EOL;
+echo "<br/>";
 
 # 3. OBJECT TYPE (object)
 
@@ -171,22 +171,22 @@ class objectFoo
 
 $object1 = new objectFoo;
 $object1->object_do(); // Doing foo.
-echo PHP_EOL;
+echo "<br/>";
 var_dump($object1); // object(objectFoo)#1 (0) { }
-echo PHP_EOL;
+echo "<br/>";
 
 # 4. RESOURCE TYPE (resource)
 
 // [CLI] 
- $resource1 = fopen('helpers/resource_example.txt', 'r');
+//  $resource1 = fopen('helpers/resource_example.txt', 'r');
 // [BROWSER]
-//$resource1 = fopen('../helpers/resource_example.txt', 'r'); 
+$resource1 = fopen('../helpers/resource_example.txt', 'r'); 
 var_dump($resource1);
 /*
     [BROWSER] resource(3) of type (stream)
     [CLI] resource(5) of type (stream)
 */
- echo PHP_EOL;
+ echo "<br/>";
 
 # 5. NEVER TYPE 
 
@@ -203,7 +203,7 @@ function void_function(string $name): void
     echo "Hi, $name!";
 }
 void_function("Jack"); // Hi, Jack!
-echo PHP_EOL;
+echo "<br/>";
 
 # 7. RELATIVE CLASS TYPES (self, parent, static)
 
@@ -244,10 +244,10 @@ $relative_student1 = RelativeStudent::make();
 $relative_student2 = RelativeStudent::makeStatic();
 $relative_student3 = RelativeStudent::makeParent();
 
-echo get_class($relative_person1) . PHP_EOL; // RelativePerson
-echo get_class($relative_student1) . PHP_EOL; // RelativePerson
-echo get_class($relative_student2) . PHP_EOL; // RelativeStudent
-echo get_class($relative_student3) . PHP_EOL; // RelativePerson
+echo get_class($relative_person1) . "<br/>"; // RelativePerson
+echo get_class($relative_student1) . "<br/>"; // RelativePerson
+echo get_class($relative_student2) . "<br/>"; // RelativeStudent
+echo get_class($relative_student3) . "<br/>"; // RelativePerson
 
 # 8. SINGLETON TYPES (flase, true)
 
@@ -273,23 +273,23 @@ $singleton1 = Singleton::getInstance();
 $singleton2 = Singleton::getInstance();
 
 var_dump($singleton1); // object(Singleton)#6 (0) { }
-echo PHP_EOL;
+echo "<br/>";
 var_dump($singleton2); // object(Singleton)#6 (0) { }
-echo PHP_EOL;
+echo "<br/>";
 var_dump($singleton1 === $singleton2); // bool(true)
-echo PHP_EOL;
+echo "<br/>";
 
 # 9. UNIT TYPES (null)
 
 $unit_null1 = NULL;
 var_dump($unit_null1); // NULL
-echo PHP_EOL;
+echo "<br/>";
 $unit_null2 = null;
 var_dump($unit_null2); // NULL
-echo PHP_EOL;
+echo "<br/>";
 $unit_null3 = Null;
 var_dump($unit_null3); // NULL
-echo PHP_EOL;
+echo "<br/>";
 
 # 10. USER-DEFINED TYPES (Interfaces, Classes, Enumerations)
 
@@ -347,7 +347,7 @@ class ClassesC1
 
 $classes_instance1 = new ClassesC1();
 var_dump($classes_instance1); // object(ClassesC1)#7 (1) { ["var"]=> string(15) "a default value" }
-echo PHP_EOL;
+echo "<br/>";
 
 ## Enumerations
 
@@ -360,7 +360,7 @@ enum EnumerationsSuit
 }
 $enumerations_suit = EnumerationsSuit::Diamonds;
 var_dump($enumerations_suit); // enum(EnumerationsSuit::Diamonds)
-echo PHP_EOL;
+echo "<br/>";
 
 function enum_do_stuff(EnumerationsSuit $s)
 {
@@ -378,7 +378,7 @@ enum_do_stuff(EnumerationsSuit::Clubs); // You chose ♣ Clubs!
 
 function callable_function1()
 {
-    echo 'hello world' . PHP_EOL;
+    echo 'hello world' . "<br/>";
 }
 call_user_func('callable_function1'); // hello world
 # var_dump(callable_function_1); // Undefined constant 'callable_function_1'
@@ -401,12 +401,12 @@ class IntersectionC implements IntersectionA, IntersectionB
 {
     public function greeting()
     {
-        echo "Hello!" . PHP_EOL;
+        echo "Hello!" . "<br/>";
     }
 
     public function farewell()
     {
-        echo "Bye" . PHP_EOL;
+        echo "Bye" . "<br/>";
     }
 }
 
@@ -428,9 +428,9 @@ function union_formatting(string|int $value): string
     return "Value: " . $value;
 }
 echo union_formatting("some text"); // Value: some text
-echo PHP_EOL;
+echo "<br/>";
 echo union_formatting(148); // Value: 148
-echo PHP_EOL;
+echo "<br/>";
 
 //////////// TYPE ALIASES (mixed, iterable)
 
@@ -439,7 +439,7 @@ echo PHP_EOL;
 function mixed_process(mixed $value)
 {
     var_dump($value);
-    echo PHP_EOL;
+    echo "<br/>";
 }
 mixed_process("text"); // string(4) "text"
 mixed_process(50); // int(50)
@@ -450,7 +450,7 @@ mixed_process(["a", "b"]); // array(2) { [0]=> string(1) "a" [1]=> string(1) "b"
 function mixed_showAll(iterable $items): void
 {
     foreach ($items as $item) {
-        echo $item . PHP_EOL;
+        echo $item . "<br/>";
     }
 }
 mixed_showAll(["apple", "banana"]);
